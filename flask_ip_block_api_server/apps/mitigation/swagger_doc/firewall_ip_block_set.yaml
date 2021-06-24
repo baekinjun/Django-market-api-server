@@ -1,0 +1,73 @@
+tags:
+  - '[미티게이션 페이지] firewall_ip_block api'
+parameters:
+  - in: formData
+    name: fw_name
+    type: str
+    enum: [ 'forti_사무실' ]
+    required: true
+
+  - in: formData
+    name: group_name
+    type: str
+    enum: [ 'G_Blocked_IP' ]
+    required: true
+
+  - in: formData
+    name: fw_id
+    type: integer
+    required: true
+
+  - in: formData
+    name: ip_address
+    type: string
+    required: true
+
+  - in: formData
+    name: requirement_user
+    type: string
+    required: true
+
+responses:
+  200:
+    description: 미티게이션 페이지 방화벽 설정 api
+    schema:
+      id: firewall_ip_block_set
+    examples:
+      {
+        "status": 200,
+        "result": "Your request is successful",
+        "message": "Request fulfilled, document follows",
+        "data":
+          [
+            {
+              "fw_name": "forti_사무실",
+              "group_name": "G_Blocked_IP"
+            },
+            {
+              "fw_name": "pa_경지팀",
+              "group_name": "G_Blocked_IP"
+            }
+          ]
+      }
+  400:
+    description: 미티게이션 페이지 방화벽 설정 api 실패
+    schema:
+      id: firewall_ip_block_set failed
+      examples:
+        {
+          "status": 400,
+          "result": "Your request is failed",
+          "message": "Bad request syntax or unsupported method",
+        }
+
+  403:
+    description: 미티게이션 페이지 방화벽 설정 api 실패
+    schema:
+      id: firewall_ip_block_set faileds
+      examples:
+        {
+          "status": 403,
+          "result": "Your request is failed",
+          "message": "Request forbidden -- authorization will not help",
+        }

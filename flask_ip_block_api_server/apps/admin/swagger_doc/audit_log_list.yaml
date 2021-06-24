@@ -1,0 +1,68 @@
+tags:
+  - '[어드민 페이지]'
+summary:
+  - '[어드민 페이지] 어딧로그 리스트 api'
+parameters:
+  - in: query
+    name: category
+    type: string
+    enum: [ 'all','admin','firewall' ]
+    required: true
+
+  - in: query
+    name: keyword
+    type: string
+    required: false
+
+  - in: query
+    name: offset
+    type: integer
+    required: false
+
+  - in: query
+    name: limit
+    type: integer
+    required: false
+responses:
+  200:
+    description: 어드민 페이지 어딧로그 리스트
+    schema:
+      id: audit_log_list
+    examples:
+      {
+        "status": 200,
+        "result": "Your request is successful",
+        "message": "Request fulfilled, document follows",
+        "data": [
+          {
+            "Time": "2021-05-31 10:14:07",
+            "Process": "admin",
+            "Message": "백인준 (10.10.8.8) 맴버가 등록되었습니다."
+          },
+          {
+            "Time": "2021-05-31 10:12:11",
+            "Process": "admin",
+            "Message": "백인준 (10.10.8.8) 맴버가 등록되었습니다."
+          },
+          {
+            "Time": "2021-05-27 10:21:38",
+            "Process": "admin",
+            "Message": "백인준 (10.10.8.8) 맴버가 등록되었습니다."
+          },
+          {
+            "Time": "2021-05-26 17:51:21",
+            "Process": "firewall",
+            "Message": "테스트 백인준 (이)가 안유리 를 포티넷1번 에서 차단했습니다."
+          }
+        ]
+      }
+  400:
+    description: 어드민 페이지 어딧로그 리스트 실패
+    schema:
+      id: audit_log_list_failed
+    examples:
+      {
+        "status": 400,
+        "result": "Your request is failed",
+        "message": "Bad request syntax or unsupported method",
+      }

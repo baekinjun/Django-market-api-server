@@ -1,0 +1,114 @@
+tags:
+  - '[미티게이션 페이지] firewall_ip_block api'
+parameters:
+  - in: query
+    name: limit
+    type: integer
+    required: true
+
+  - in: query
+    name: offset
+    type: integer
+    required: true
+responses:
+  200:
+    description: 미티게이션 페이지 블락 ip 리스트
+    schema:
+      id: firewall_block_ip_all
+    examples:
+      {
+        "status": 200,
+        "result": "Your request is successful",
+        "message": "Request fulfilled, document follows",
+        "data":
+          [
+            {
+              "block_id": 20,
+              "command": 1,
+              "done": 1,
+              "fw_id": 22,
+              "group_name": "G_Blocked_IP",
+              "ip_address": "9.9.9.191",
+              "reg_dtime": "2021-04-26 16:39:05",
+              "requirement_user": "",
+              "fw_name": "forti_사무실",
+              "fw_type": "forti",
+              "fw_url": "10.3.1.1"
+            },
+            {
+              "block_id": 22,
+              "command": 1,
+              "done": 1,
+              "fw_id": 22,
+              "group_name": "G_Blocked_IP",
+              "ip_address": "9.9.9.9",
+              "reg_dtime": "2021-04-27 09:48:02",
+              "requirement_user": "",
+              "fw_name": "forti_사무실",
+              "fw_type": "forti",
+              "fw_url": "10.3.1.1"
+            },
+            {
+              "block_id": 23,
+              "command": 1,
+              "done": 1,
+              "fw_id": 22,
+              "group_name": "G_Blocked_IP",
+              "ip_address": "9.9.9.192",
+              "reg_dtime": "2021-04-27 09:48:07",
+              "requirement_user": "",
+              "fw_name": "forti_사무실",
+              "fw_type": "forti",
+              "fw_url": "10.3.1.1"
+            },
+            {
+              "block_id": 24,
+              "command": 1,
+              "done": 1,
+              "fw_id": 22,
+              "group_name": "G_Blocked_IP",
+              "ip_address": "1.1.1.1",
+              "reg_dtime": "2021-04-28 10:31:10",
+              "requirement_user": "",
+              "fw_name": "forti_사무실",
+              "fw_type": "forti",
+              "fw_url": "10.3.1.1"
+            },
+            {
+              "block_id": 35,
+              "command": 1,
+              "done": 2,
+              "fw_id": 22,
+              "group_name": "G_Blocked_IP",
+              "ip_address": "9.9.9.193",
+              "reg_dtime": "2021-04-30 15:28:27",
+              "requirement_user": "",
+              "fw_name": "forti_사무실",
+              "fw_type": "forti",
+              "fw_url": "10.3.1.1"
+            },
+            {
+              "block_id": 40,
+              "command": 0,
+              "done": 2,
+              "fw_id": 142,
+              "group_name": "G_Blocked_IP",
+              "ip_address": "1.234.19.182",
+              "reg_dtime": "2021-06-10 15:44:10",
+              "requirement_user": "",
+              "fw_name": "pa_경지팀",
+              "fw_type": "pa",
+              "fw_url": "10.3.4.2"
+            }
+          ]
+      }
+  400:
+    description: 미티게이션 페이지 블락 ip 리스트 api 실패
+    schema:
+      id: firewall_block_ip_all failed
+    examples:
+      {
+        "status": 400,
+        "result": "Your request is failed",
+        "message": "Bad request syntax or unsupported method",
+      }

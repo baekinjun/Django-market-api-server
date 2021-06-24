@@ -1,0 +1,26 @@
+tags:
+  - '[메인 ,바이올레이션 ,디텍션 혼용]'
+summary:
+  - '[메인 ,디텍션 페이지] 디텍션 트래픽 api'
+responses:
+  200:
+    description: 메인페이지 디텍션 트래픽
+    schema:
+      id: detection_violation traffic
+    examples:
+      {
+        "status": 200,
+        "result": "Your request is successful",
+        "message": "Request fulfilled, document follows",
+        "data": 2
+      }
+  400:
+    description: 메인페이지 디텍션 트래픽 실패
+    schema:
+      id: detection_violation traffic failed
+    examples:
+      {
+        "status": 400,
+        "result": "Your request is failed",
+        "message": "Bad request syntax or unsupported method",
+      }

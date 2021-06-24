@@ -1,0 +1,41 @@
+tags:
+  - '[인베스티게이션 페이지]'
+summary:
+  - '[인베스티게이션 페이지] 말테고 IN api'
+parameters:
+  - in: query
+    name: ip_address
+    type: string
+    required: true
+
+  - in: query
+    name: count
+    type: integer
+    required: true
+
+  - in: query
+    name: now
+    type: string
+    required: true
+
+responses:
+  200:
+    description: maltego in api
+    schema:
+      id: maltego_in_api
+    examples:
+      {
+        "status": 200,
+        "result": "Your request is successful",
+        "message": "Request fulfilled, document follows"
+      }
+  400:
+    description: maltego in api 실패
+    schema:
+      id: maltego_in_api_failed
+    examples:
+      {
+        "status": 400,
+        "result": "Your request is failed",
+        "message": "Bad request syntax or unsupported method",
+      }

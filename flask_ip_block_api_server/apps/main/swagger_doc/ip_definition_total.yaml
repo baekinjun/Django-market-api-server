@@ -1,0 +1,26 @@
+tags:
+  - '[메인]'
+summary:
+  - '[메인] IP 등록률 api'
+responses:
+  200:
+    description: 메인페이지 IP 등록률
+    schema:
+      id: ip_definition_total
+    examples:
+      {
+        "status": 200,
+        "result": "Your request is successful",
+        "message": "Request fulfilled, document follows",
+        "data": 667
+      }
+  400:
+    description: 메인페이지 IP 등록률 실패
+    schema:
+      id: ip_definition_total failed
+    examples:
+      {
+        "status": 400,
+        "result": "Your request is failed",
+        "message": "Bad request syntax or unsupported method",
+      }

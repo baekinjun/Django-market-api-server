@@ -1,0 +1,36 @@
+tags:
+  - '[연구페이지]'
+summary:
+  - 연구페이지 타이틀 api
+parameters:
+  - in: query
+    name: id
+    type: integer
+    required: true
+    enum: [ 1, 2, 3 ]
+responses:
+  200:
+    description: 연구페이지 연구페이지 타이틀
+    schema:
+      id: lab_title
+    examples:
+      {
+        "status": 200,
+        "result": "Your request is successful",
+        "message": "Request fulfilled, document follows",
+        "data":
+          {
+            "id": 2,
+            "title": "TEST2. 일주일 동안 가장 여러 사람이 접속한 IP (MAX 200건) \\r\\n [1] 접속자 수     [2] 대상 IP [3] common OR asn      [4] app명     [5] 마지막 접속시간 \\r\\n (common명 없는 IP는 asn 으로 출력)"
+          }
+      }
+  400:
+    description: 연구페이지 연구페이지 타이틀 실패
+    schema:
+      id: lab_title failed
+    examples:
+      {
+        "status": 400,
+        "result": "Your request is failed",
+        "message": "Bad request syntax or unsupported method",
+      }

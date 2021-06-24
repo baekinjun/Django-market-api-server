@@ -1,0 +1,81 @@
+tags:
+  - '[미티게이션 페이지] 방화벽 configuration api'
+parameters:
+  - in: formData
+    name: fw_id
+    type: integer
+    required: true
+
+  - in: formData
+    name: fw_type
+    type: string
+    required: true
+
+  - in: formData
+    name: fw_name
+    type: string
+    required: true
+
+  - in: formData
+    name: group_name
+    type: string
+    required: true
+
+  - in: formData
+    name: dev_id
+    type: string
+    required: true
+
+  - in: formData
+    name: fw_url
+    type: string
+    required: true
+
+  - in: formData
+    name: user_id
+    type: string
+    required: true
+
+  - in: formData
+    name: user_pw
+    type: string
+    required: true
+
+  - in: formData
+    name: api_key
+    type: string
+    required: true
+
+responses:
+  200:
+    description: 미티게이션 페이지 방화벽 configuration 업데이트 api
+    schema:
+      id: firewall_configuration_update
+    examples:
+      {
+        "status": 200,
+        "result": "Your request is successful",
+        "message": "Request fulfilled, document follows",
+        "data":
+          [
+            {
+              "fw_name": "forti_사무실",
+              "group_name": "G_Blocked_IP"
+            },
+            {
+              "fw_name": "pa_경지팀",
+              "group_name": "G_Blocked_IP"
+            }
+          ]
+      }
+  400:
+    description: 미티게이션 페이지 방화벽 configuration 업데이트 api 실패
+    schema:
+      id: firewall_configuration_update failed
+      examples:
+        {
+          "status": 400,
+          "result": "Your request is failed",
+          "message": "Bad request syntax or unsupported method",
+        }
+
