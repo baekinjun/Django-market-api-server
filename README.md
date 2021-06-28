@@ -19,7 +19,11 @@ how to run this flask api server:
 using drf-yasg (swagger lib)
 
     localhost or your ip address
-    
+
+## firebase 를 이용하여 로그인 구현 및 인가 부여
+
+firebase 를 이용하여 인가를 부여하고 이를 문자메시지 형태로 인증번호를 받아서 
+인증및 인가를 부여합니다.
 
     
 ## 구현하면서 생각
